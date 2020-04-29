@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>TV Shows</span>
+    <div>
+      <a mat-button [routerLink]="'/'"> All Shows </a>
+      <a mat-button [routerLink]="'/favorites'"> Favorite Shows </a>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

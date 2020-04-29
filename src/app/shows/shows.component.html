@@ -1,0 +1,19 @@
+<mat-card *ngFor="let show of shows">
+  <mat-card-header>
+    <div mat-card-avatar><img [src]="show.imgUrl" /></div>
+    <mat-card-title>{{ show.name }}</mat-card-title>
+    <mat-card-subtitle>{{ show.description }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions>
+    <button mat-flat-button *ngIf="!show.isFavorite" (click)="favorite.emit(show)">FAVORITE</button>
+    <button mat-flat-button color="primary" *ngIf="show.isFavorite" (click)="unfavorite.emit(show)">UNFAVORITE</button>
+    <button mat-flat-button color="warn" (click)="remove.emit(show)">REMOVE</button>
+
+  </mat-card-actions>
+</mat-card>
+
+<mat-card *ngIf="!shows.length">
+  <mat-card-header>
+    <mat-card-title>No results</mat-card-title>
+  </mat-card-header>
+</mat-card>

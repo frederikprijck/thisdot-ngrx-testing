@@ -1,0 +1,7 @@
+<h1 class="mat-display-1">All Shows</h1>
+<app-shows
+  [shows]="shows$ | async"
+  (favorite)="favoriteShow($event.id)"
+  (unfavorite)="unfavoriteShow($event.id)"
+  (remove)="removeShow($event.id)"
+></app-shows>
